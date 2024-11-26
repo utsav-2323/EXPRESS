@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erpress js:-crud</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        margin-bottom: 30px;
+        font-size: 80px;
+        text-align: center;
+        color: #fff;
+    }
+    body{
+        width: 100%;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+    }
+    table{
+        width: 60%;
+        border: 1px solid #fff;
+    }
+
+    td{
+        text-align: center;
+        color: #fff;
+        border: 1px solid #fff;
+        font-size: 20px;
+    }
+    th{
+        color: #fff;
+        border: 1px solid #fff;
+        font-size: 25px;
+    }
+</style>
+<body>
+    <h1>TEBAL</h1>
+
+    <form action="/addData" method="post">
+        <input type="text" placeholder="Enter your Name" name="name">
+        <input type="text" placeholder="Enter your Subject" name="subject">
+        <input type="text" placeholder="Enter your Phone" name="phone">
+        <button type="submit">Submit</button>
+    </form>
+    
+
+    <table>
+        <thead border="1px solid #fff">
+            <th height="50px">Id</th>
+            <th height="50px">Name</th>
+            <th height="50px">Subject</th>
+            <th height="50px">Phone</th>
+            <th height="50px" colspan="2">Action</th>
+        </thead>
+        <tbody>
+            <% std.map((e,i)=>{%>
+                <tr >
+                    <td height="30px"><%= e.id %></td>
+                    <td height="30px"><%= e.name %></td>
+                    <td height="30px"><%= e.subject %></td>
+                    <td height="30px"><%= e.phone %></td>
+                    <td height="30px" width="100px"><button><a href="/editData/<%=e.id%>">Edit</a></button></td>
+                    <td height="30px" width="100px"><button><a href="/deleteData?id=<%=e.id%>">Delete</a></button></td>
+                </tr>    
+            <%})%>
+        </tbody>
+    </table>
+    
+</body>
+</html>

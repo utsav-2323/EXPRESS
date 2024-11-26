@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erpress js:-crud</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        margin-bottom: 30px;
+        font-size: 80px;
+        text-align: center;
+        color: #fff;
+    }
+    body{
+        width: 100%;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+    }
+</style>
+<body>
+    <h1>Edit Data</h1>
+
+    <form action="/updateData" method="post">
+        <input type="text" value="<%=singleData.id%>" placeholder="Enter your Phone" name="id" hidden>
+        <input type="text" value="<%=singleData.name%>" placeholder="Enter your Name" name="name">
+        <input type="text" value="<%=singleData.subject%>" placeholder="Enter your Subject" name="subject">
+        <input type="text" value="<%=singleData.phone%>" placeholder="Enter your Phone" name="phone">
+        <button type="submit">Update</button>
+    </form>
+    
+
+    
+</body>
+</html>
